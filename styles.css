@@ -1,1 +1,85 @@
 /*Maak hier jouw CSS!*/
+body {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 50px 174px 100px auto 50px;
+    grid-template-areas: "a c c" "b c c" "b e d" "b e g" "f f f";
+    /*grid-template-areas: "a c c"*/
+    /*    "b c c"*/
+    /*    "b e d"*/
+    /*    "b e g"*/
+    /*    "f f f";*/
+    gap: 12px;
+}
+header { /*A*/
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    grid-area: a;
+    background-color: red;
+}
+article { /* B*/
+    display: flex;
+    color: white;
+    grid-area: b;
+    background-color: darkred;
+}
+
+.C {
+    display: flex;
+    grid-area: c;
+    /*height: 240px;*/
+    background-color: palevioletred;
+}
+
+.D {
+    display: flex;
+    grid-area: d;
+    background-color: orangered;
+}
+
+.E {
+    display: flex;
+    grid-area: e;
+    background-color: orange;
+}
+
+#grid-gap {
+    display: flex;
+    grid-area: g;
+    background-color: lightpink;
+}
+
+.leeg {
+    font-size: 0;
+}
+
+footer {
+    display: flex;
+    grid-area: f;
+    background-color: darkblue;
+}
+
+@media only screen and (max-width: 768px) {
+    body {
+        grid-template-rows: 50px auto 50px 50px 50px 50px 50px;
+        grid-template-columns: 1fr;
+        grid-template-areas: "header" "mobile-article" "c" "d" "e" "leeg" "f";
+    }
+    header {
+        grid-template-columns: 1fr;
+        background-color: darkred;
+        grid-area: header;
+        color: antiquewhite;
+    }
+
+    article {
+        display: flex;
+        grid-area: mobile-article;
+        background-color: orangered;
+    }
+
+    .leeg {
+        background-color: transparent;
+    }
+}
